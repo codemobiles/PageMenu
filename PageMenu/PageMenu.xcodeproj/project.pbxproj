@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		C797E14E1BAB764400D2808F /* PageMenuFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = C797E14D1BAB764400D2808F /* PageMenuFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C797E1581BAB765100D2808F /* CAPSPageMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = C797E1441BAB754600D2808F /* CAPSPageMenu.swift */; };
+		D2FA70062345EBEB00608CF6 /* ItemTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FA70042345EBEB00608CF6 /* ItemTabView.swift */; };
+		D2FA70072345EBEB00608CF6 /* ItemTabView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2FA70052345EBEB00608CF6 /* ItemTabView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -17,6 +19,8 @@
 		C797E14B1BAB764400D2808F /* PageMenuFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PageMenuFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C797E14D1BAB764400D2808F /* PageMenuFramework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PageMenuFramework.h; sourceTree = "<group>"; };
 		C797E14F1BAB764400D2808F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D2FA70042345EBEB00608CF6 /* ItemTabView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemTabView.swift; sourceTree = "<group>"; };
+		D2FA70052345EBEB00608CF6 /* ItemTabView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ItemTabView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +64,8 @@
 			isa = PBXGroup;
 			children = (
 				C797E1441BAB754600D2808F /* CAPSPageMenu.swift */,
+				D2FA70042345EBEB00608CF6 /* ItemTabView.swift */,
+				D2FA70052345EBEB00608CF6 /* ItemTabView.xib */,
 			);
 			name = Classes;
 			path = ../../Classes;
@@ -126,6 +132,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -144,6 +151,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2FA70072345EBEB00608CF6 /* ItemTabView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -155,6 +163,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C797E1581BAB765100D2808F /* CAPSPageMenu.swift in Sources */,
+				D2FA70062345EBEB00608CF6 /* ItemTabView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

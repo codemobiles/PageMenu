@@ -1171,31 +1171,36 @@ open class CAPSPageMenu: UIViewController, UIScrollViewDelegate, UIGestureRecogn
         
         var normal = ""
         var focus = ""
+        var text = ""
+        var color = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        
         switch index {
         case 0:
             normal = "icon_super_match"
             focus = "icon_super_match"
+            text = "Super Match"
+            color = #colorLiteral(red: 0.737254902, green: 0.4549019608, blue: 0.7215686275, alpha: 1)
         case 1:
             normal = "icon_job_my_like"
             focus = "icon_job_my_like"
+            text = "งานที่คุณอาจสนใจ"
+            color = #colorLiteral(red: 0.4705882353, green: 0.7568627451, blue: 0.4235294118, alpha: 1)
         case 2:
             normal = "icon_job_update"
             focus = "icon_job_update"
+            text = "งานตามเงื่อนไขที่บันทึกไว้"
+            color = #colorLiteral(red: 0.862745098, green: 0.7176470588, blue: 0.2509803922, alpha: 1)
         case 3:
-            normal = "icon_Job_by_Ai"
-            focus = "icon_Job_by_Ai"
+            normal = "icon_job_by_ai"
+            focus = "icon_job_by_ai"
+            text = "Job by AI"
+            color = #colorLiteral(red: 0.03529411765, green: 0.6901960784, blue: 0.8588235294, alpha: 1)
         default:
             normal = ""
             focus = ""
+            text = ""
+            color = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         }
-        
-             let text1: UITextView = UITextView()
-        text1.text = "Super Math"
-        let stackview: UIStackView = UIStackView()
-        stackview.axis  = NSLayoutConstraint.Axis.vertical
-        stackview.distribution  = UIStackView.Distribution.equalSpacing
-        stackview.alignment = UIStackView.Alignment.center
-        stackview.spacing   = 16.0
         
         
         let imageFocus: UIImage = UIImage(named: focus)!
@@ -1216,9 +1221,12 @@ open class CAPSPageMenu: UIViewController, UIScrollViewDelegate, UIGestureRecogn
         bgImageNormal.frame = imageFrame
         bgImageNormal.tag = 9999
         bgImageNormal.alpha = 1.0
-        stackview.addArrangedSubview(bgImageNormal)
-        stackview.translatesAutoresizingMaskIntoConstraints = false
-        self.menuItems[index].addSubview(stackview) 
+        
+        let item = ItemTabView()
+        item.titleLabel.text = text
+        item.iconImageView = bgImageNormal
+        
+        self.menuItems[index].addSubview(item)
     }
     
     func resetAllImage() {

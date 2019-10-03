@@ -4,6 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -14,7 +15,7 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ItemTabView" customModule="ActiveLabel">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ItemTabView" customModule="PageMenuFramework">
             <connections>
                 <outlet property="iconImageView" destination="yRS-Mh-XJf" id="hsx-iM-fc5"/>
                 <outlet property="titleLabel" destination="7ab-yg-LH6" id="ZfI-L7-jGv"/>
@@ -30,10 +31,10 @@
                     <rect key="frame" x="0.0" y="44" width="253" height="145"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uOK-EK-85T">
-                            <rect key="frame" x="0.0" y="0.0" width="253" height="116"/>
+                            <rect key="frame" x="0.0" y="0.0" width="253" height="120.5"/>
                             <subviews>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_super_match" translatesAutoresizingMaskIntoConstraints="NO" id="yRS-Mh-XJf">
-                                    <rect key="frame" x="108.5" y="40" width="36" height="36"/>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yRS-Mh-XJf">
+                                    <rect key="frame" x="108.5" y="42.5" width="36" height="36"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="36" id="1tL-bM-7LV"/>
                                         <constraint firstAttribute="height" constant="36" id="EPn-bf-Tfy"/>
@@ -47,7 +48,7 @@
                             </constraints>
                         </view>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7ab-yg-LH6">
-                            <rect key="frame" x="0.0" y="124" width="253" height="21"/>
+                            <rect key="frame" x="0.0" y="128.5" width="253" height="16.5"/>
                             <fontDescription key="fontDescription" name="RobotoWeb-Regular" family="Roboto Web" pointSize="14"/>
                             <color key="textColor" red="0.73725490196078436" green="0.45490196078431372" blue="0.72156862745098038" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>
@@ -67,7 +68,4 @@
             <point key="canvasLocation" x="-162" y="-81"/>
         </view>
     </objects>
-    <resources>
-        <image name="icon_super_match" width="40" height="40"/>
-    </resources>
 </document>
