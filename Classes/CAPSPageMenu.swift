@@ -1160,8 +1160,8 @@ open class CAPSPageMenu: UIViewController, UIScrollViewDelegate, UIGestureRecogn
     
     /****************************** Meaw ******************************/
     func addImageOverMyMenuItem(index: Int) {
-        let imageWidth = CGFloat(36.0)
-        let imageHeight = CGFloat(36.0)
+        let imageWidth = CGFloat(50.0)
+        let imageHeight = CGFloat(50.0)
         
         //        var labelFrame = self.menuItems[index].titleLabel!.frame
         //        labelFrame.origin.x = imageWidth / 1.5
