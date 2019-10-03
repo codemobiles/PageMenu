@@ -1198,8 +1198,6 @@ open class CAPSPageMenu: UIViewController, UIScrollViewDelegate, UIGestureRecogn
         stackview.spacing   = 16.0
         
         
-        stackview.addArrangedSubview(text1)
-        
         let imageFocus: UIImage = UIImage(named: focus)!
         let bgImageFocus = UIImageView(image: imageFocus)
         
