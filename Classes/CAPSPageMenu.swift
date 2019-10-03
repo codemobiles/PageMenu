@@ -1173,17 +1173,17 @@ open class CAPSPageMenu: UIViewController, UIScrollViewDelegate, UIGestureRecogn
         var focus = ""
         switch index {
         case 0:
-            normal = "supermatch1"
-            focus = "supermatch1_focus"
+            normal = "icon_super_match"
+            focus = "icon_super_match"
         case 1:
-            normal = "supermatch2"
-            focus = "supermatch2_focus"
+            normal = "icon_job_my_like"
+            focus = "icon_job_my_like"
         case 2:
-            normal = "supermatch3"
-            focus = "supermatch3_focus"
+            normal = "icon_job_update"
+            focus = "icon_job_update"
         case 3:
-            normal = "supermatch4"
-            focus = "supermatch4_focus"
+            normal = "icon_Job_by_Ai"
+            focus = "icon_Job_by_Ai"
         default:
             normal = ""
             focus = ""
