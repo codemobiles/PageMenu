@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="RobotoWeb-Regular.ttf">
+            <string>RobotoWeb-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ItemTabView" customModule="ActiveLabel">
+            <connections>
+                <outlet property="iconImageView" destination="yRS-Mh-XJf" id="hsx-iM-fc5"/>
+                <outlet property="titleLabel" destination="7ab-yg-LH6" id="ZfI-L7-jGv"/>
+                <outlet property="view" destination="iN0-l3-epB" id="afT-gk-Rdl"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="253" height="223"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="uZ2-b0-uhN">
+                    <rect key="frame" x="0.0" y="44" width="253" height="145"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uOK-EK-85T">
+                            <rect key="frame" x="0.0" y="0.0" width="253" height="116"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_super_match" translatesAutoresizingMaskIntoConstraints="NO" id="yRS-Mh-XJf">
+                                    <rect key="frame" x="108.5" y="40" width="36" height="36"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="36" id="1tL-bM-7LV"/>
+                                        <constraint firstAttribute="height" constant="36" id="EPn-bf-Tfy"/>
+                                    </constraints>
+                                </imageView>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="yRS-Mh-XJf" firstAttribute="centerX" secondItem="uOK-EK-85T" secondAttribute="centerX" id="CVS-ol-ejX"/>
+                                <constraint firstItem="yRS-Mh-XJf" firstAttribute="centerY" secondItem="uOK-EK-85T" secondAttribute="centerY" id="YhO-xB-6cm"/>
+                            </constraints>
+                        </view>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7ab-yg-LH6">
+                            <rect key="frame" x="0.0" y="124" width="253" height="21"/>
+                            <fontDescription key="fontDescription" name="RobotoWeb-Regular" family="Roboto Web" pointSize="14"/>
+                            <color key="textColor" red="0.73725490196078436" green="0.45490196078431372" blue="0.72156862745098038" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="uZ2-b0-uhN" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="9yj-8d-AaD"/>
+                <constraint firstItem="uZ2-b0-uhN" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="ATJ-26-t6d"/>
+                <constraint firstItem="uZ2-b0-uhN" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="UbP-py-Xla"/>
+                <constraint firstItem="uZ2-b0-uhN" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="gOr-ce-VYJ"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="-162" y="-81"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="icon_super_match" width="40" height="40"/>
+    </resources>
+</document>
