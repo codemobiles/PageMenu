@@ -1202,6 +1202,13 @@ open class CAPSPageMenu: UIViewController, UIScrollViewDelegate, UIGestureRecogn
             color = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         }
         
+        let title = UILabel()
+        title.lineBreakMode = .byWordWrapping
+        title.font = UIFont(name: "RobotoWeb-Regular", size: 14.0)!
+        title.numberOfLines = 0
+        title.text = text
+        title.textColor = color
+        title.sizeToFit()
         
         let imageFocus: UIImage = UIImage(named: focus)!
         let bgImageFocus = UIImageView(image: imageFocus)
@@ -1222,11 +1229,19 @@ open class CAPSPageMenu: UIViewController, UIScrollViewDelegate, UIGestureRecogn
         bgImageNormal.tag = 9999
         bgImageNormal.alpha = 1.0
         
-        let item = ItemTabView()
-        item.titleLabel.text = text
-        item.iconImageView = bgImageNormal
+        let viewForcus = UIView()
+        viewForcus.tag = 8888
+        viewForcus.alpha = 0.0
+        viewForcus.addSubview(bgImageNormal)
+        viewForcus.addSubview(title)
         
-        self.menuItems[index].addSubview(item)
+        
+        bgImageNormal.anchor(self.menuItems[index].topAnchor, left: nil, bottom: nil, right: nil, topConstant: 8, leftConstant: 12, bottomConstant: 0, rightConstant: 0, widthConstant: imageWidth, heightConstant: imageHeight)
+        bgImageNormal.centerXAnchor.constraint(equalTo: self.menuItems[index].centerXAnchor).isActive = true
+        
+        title.anchor(bgImageNormal.bottomAnchor, left: self.menuItems[index].leftAnchor, bottom: self.menuItems[index].bottomAnchor, right: self.menuItems[index].rightAnchor, topConstant: 16, leftConstant: 8, bottomConstant: 8, rightConstant: 8, widthConstant: self.menuItems[index].frame.width, heightConstant: 20)
+        
+        self.menuItems[index].addSubview(viewForcus)
     }
     
     func resetAllImage() {

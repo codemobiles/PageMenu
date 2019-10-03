@@ -11,6 +11,7 @@
 		C797E1581BAB765100D2808F /* CAPSPageMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = C797E1441BAB754600D2808F /* CAPSPageMenu.swift */; };
 		D2FA70062345EBEB00608CF6 /* ItemTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FA70042345EBEB00608CF6 /* ItemTabView.swift */; };
 		D2FA70072345EBEB00608CF6 /* ItemTabView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2FA70052345EBEB00608CF6 /* ItemTabView.xib */; };
+		D2FA700D2346028000608CF6 /* UIView+Anchors.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FA700C2346028000608CF6 /* UIView+Anchors.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +22,7 @@
 		C797E14F1BAB764400D2808F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D2FA70042345EBEB00608CF6 /* ItemTabView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemTabView.swift; sourceTree = "<group>"; };
 		D2FA70052345EBEB00608CF6 /* ItemTabView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ItemTabView.xib; sourceTree = "<group>"; };
+		D2FA700C2346028000608CF6 /* UIView+Anchors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Anchors.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				C797E1441BAB754600D2808F /* CAPSPageMenu.swift */,
 				D2FA70042345EBEB00608CF6 /* ItemTabView.swift */,
 				D2FA70052345EBEB00608CF6 /* ItemTabView.xib */,
+				D2FA700C2346028000608CF6 /* UIView+Anchors.swift */,
 			);
 			name = Classes;
 			path = ../../Classes;
@@ -163,6 +166,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C797E1581BAB765100D2808F /* CAPSPageMenu.swift in Sources */,
+				D2FA700D2346028000608CF6 /* UIView+Anchors.swift in Sources */,
 				D2FA70062345EBEB00608CF6 /* ItemTabView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -263,6 +267,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = PageMenuFramework/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = PageMenu.PageMenuFramework;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -283,6 +288,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = PageMenuFramework/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = PageMenu.PageMenuFramework;
 				PRODUCT_NAME = "$(TARGET_NAME)";
