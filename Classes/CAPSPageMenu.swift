@@ -1189,6 +1189,11 @@ open class CAPSPageMenu: UIViewController, UIScrollViewDelegate, UIGestureRecogn
             focus = ""
         }
         
+        let text1: UITextView = UITextView()
+        text1.text = "Super Math"
+        let stackview: UIStackView = UIStackView()
+        stackview.addArrangedSubview(text1)
+        
         let imageFocus: UIImage = UIImage(named: focus)!
         let bgImageFocus = UIImageView(image: imageFocus)
         
@@ -1207,9 +1212,9 @@ open class CAPSPageMenu: UIViewController, UIScrollViewDelegate, UIGestureRecogn
         bgImageNormal.frame = imageFrame
         bgImageNormal.tag = 9999
         bgImageNormal.alpha = 1.0
-        
-        self.menuItems[index].addSubview(bgImageFocus)
-        self.menuItems[index].addSubview(bgImageNormal)
+        stackview.addArrangedSubview(bgImageNormal)
+        self.menuItems[index].addSubview(stackview)
+        self.menuItems[index].addSubview(stackview)
     }
     
     func resetAllImage() {
