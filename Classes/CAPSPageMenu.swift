@@ -65,6 +65,7 @@ public enum CAPSPageMenuOption {
     case viewBackgroundColor(UIColor)
     case bottomMenuHairlineColor(UIColor)
     case selectionIndicatorColor(UIColor)
+    case titleItemList([String])
     case menuItemSeparatorColor(UIColor)
     case menuMargin(CGFloat)
     case menuPadding(CGFloat)
@@ -130,6 +131,7 @@ open class CAPSPageMenu: UIViewController, UIScrollViewDelegate, UIGestureRecogn
     var lastPageIndex : Int = 0
     
     open var selectionIndicatorColor : UIColor = UIColor.white
+    open var titleItemList : [String] = []
     open var selectedMenuItemLabelColor : UIColor = UIColor.white
     open var unselectedMenuItemLabelColor : UIColor = UIColor.lightGray
     open var scrollMenuBackgroundColor : UIColor = UIColor.black
@@ -229,6 +231,8 @@ open class CAPSPageMenu: UIViewController, UIScrollViewDelegate, UIGestureRecogn
                     bottomMenuHairlineColor = value
                 case let .selectionIndicatorColor(value):
                     selectionIndicatorColor = value
+                case let .titleItemList(value):
+                    titleItemList = value
                 case let .menuItemSeparatorColor(value):
                     menuItemSeparatorColor = value
                 case let .menuMargin(value):
@@ -842,6 +846,16 @@ open class CAPSPageMenu: UIViewController, UIScrollViewDelegate, UIGestureRecogn
         pagesAddedDictionary.removeAll(keepingCapacity: false)
     }
     
+    /****************************** Meaw ******************************/
+    open func setTitleItemList(_ titleList: [String]){
+        titleItemList = titleList
+        
+        for (index, element) in self.menuItems.enumerated() {
+            element.subviews[element.subviews.count - 1].removeFromSuperview()
+            element.subviews[element.subviews.count - 1].removeFromSuperview()
+            addImageOverMyMenuItem(index: index)
+        }
+    }
     
     // MARK: - Handle Selection Indicator
     func moveSelectionIndicator(_ pageIndex: Int) {
@@ -895,7 +909,7 @@ open class CAPSPageMenu: UIViewController, UIScrollViewDelegate, UIGestureRecogn
                 default:
                     self.selectionIndicatorView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
                 }
-
+                
                 self.resetAllImage()
                 self.removeImageOverMyMenuItem(index: pageIndex, isFocus: true)
             })
@@ -1184,29 +1198,25 @@ open class CAPSPageMenu: UIViewController, UIScrollViewDelegate, UIGestureRecogn
         
         var normal = ""
         var focus = ""
-        var text = ""
+        var text = titleItemList[index]
         var color = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        
+        print("text", text)
         switch index {
         case 0:
             normal = "icon_super_match"
             focus = "icon_super_match"
-            text = "Super Match"
             color = #colorLiteral(red: 0.737254902, green: 0.4549019608, blue: 0.7215686275, alpha: 1)
         case 1:
             normal = "icon_job_my_like"
             focus = "icon_job_my_like"
-            text = "งานที่คุณอาจสนใจ"
             color = #colorLiteral(red: 0.4705882353, green: 0.7568627451, blue: 0.4235294118, alpha: 1)
         case 2:
             normal = "icon_job_update"
             focus = "icon_job_update"
-            text = "งานตามเงื่อนไขที่บันทึกไว้"
             color = #colorLiteral(red: 0.862745098, green: 0.7176470588, blue: 0.2509803922, alpha: 1)
         case 3:
             normal = "icon_job_by_ai"
             focus = "icon_job_by_ai"
-            text = "Job by AI"
             color = #colorLiteral(red: 0.03529411765, green: 0.6901960784, blue: 0.8588235294, alpha: 1)
         default:
             normal = ""
@@ -1248,7 +1258,6 @@ open class CAPSPageMenu: UIViewController, UIScrollViewDelegate, UIGestureRecogn
         
         bgImageNormal.frame = imageFrame
         bgImageNormal.contentMode = .scaleAspectFill
-        
         
         let viewFocus = UIView()
         viewFocus.tag = 8888
