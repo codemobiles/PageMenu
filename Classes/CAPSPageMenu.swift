@@ -895,7 +895,7 @@ open class CAPSPageMenu: UIViewController, UIScrollViewDelegate, UIGestureRecogn
                 default:
                     self.selectionIndicatorView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
                 }
-                
+
                 self.resetAllImage()
                 self.removeImageOverMyMenuItem(index: pageIndex, isFocus: true)
             })
@@ -1244,20 +1244,11 @@ open class CAPSPageMenu: UIViewController, UIScrollViewDelegate, UIGestureRecogn
         imageFrame.size.height = imageHeight
         
         bgImageFocus.frame = imageFrame
-//        bgImageFocus.tag = 8888
-//        bgImageFocus.alpha = 0.0
         bgImageFocus.contentMode = .scaleAspectFill
         
         bgImageNormal.frame = imageFrame
-//        bgImageNormal.tag = 9999
-//        bgImageNormal.alpha = 1.0
         bgImageNormal.contentMode = .scaleAspectFill
         
-//        let viewForcus = UIView()
-//        viewForcus.tag = 8888
-//        viewForcus.alpha = 1.0
-//        viewForcus.addSubview(bgImageNormal)
-//        viewForcus.addSubview(title)
         
         let viewFocus = UIView()
         viewFocus.tag = 8888
@@ -1292,7 +1283,7 @@ open class CAPSPageMenu: UIViewController, UIScrollViewDelegate, UIGestureRecogn
     func resetAllImage() {
         for index in (0...3) {
             if let bgImage = self.menuItems[index].viewWithTag(8888) {
-                bgImage.alpha = 0.0
+                bgImage.alpha = 1.0
             }
             
             if let bgImage = self.menuItems[index].viewWithTag(9999) {
@@ -1308,11 +1299,11 @@ open class CAPSPageMenu: UIViewController, UIScrollViewDelegate, UIGestureRecogn
             }
             
             if let bgImage = self.menuItems[index].viewWithTag(9999) {
-                bgImage.alpha = 0.0
+                bgImage.alpha = 1.0
             }
         } else {
             if let bgImage = self.menuItems[index].viewWithTag(8888) {
-                bgImage.alpha = 0.0
+                bgImage.alpha = 1.0
             }
             
             if let bgImage = self.menuItems[index].viewWithTag(9999) {
