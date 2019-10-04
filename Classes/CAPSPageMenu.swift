@@ -883,6 +883,19 @@ open class CAPSPageMenu: UIViewController, UIScrollViewDelegate, UIGestureRecogn
                 }
                 
                 /****************************** Meaw ******************************/
+                switch pageIndex {
+                case 0:
+                    self.selectionIndicatorView.backgroundColor = #colorLiteral(red: 0.737254902, green: 0.4549019608, blue: 0.7215686275, alpha: 1)
+                case 1:
+                    self.selectionIndicatorView.backgroundColor = #colorLiteral(red: 0.4705882353, green: 0.7568627451, blue: 0.4235294118, alpha: 1)
+                case 2:
+                    self.selectionIndicatorView.backgroundColor = #colorLiteral(red: 0.862745098, green: 0.7176470588, blue: 0.2509803922, alpha: 1)
+                case 3:
+                    self.selectionIndicatorView.backgroundColor = #colorLiteral(red: 0.03529411765, green: 0.6901960784, blue: 0.8588235294, alpha: 1)
+                default:
+                    self.selectionIndicatorView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+                }
+                
                 self.resetAllImage()
                 self.removeImageOverMyMenuItem(index: pageIndex, isFocus: true)
             })
@@ -1159,9 +1172,9 @@ open class CAPSPageMenu: UIViewController, UIScrollViewDelegate, UIGestureRecogn
     
     
     /****************************** Meaw ******************************/
-    func addImageOverMyMenuItem(index: Int) {
-        let imageWidth = CGFloat(60.0)
-        let imageHeight = CGFloat(60.0)
+      func addImageOverMyMenuItem(index: Int) {
+        let imageWidth = CGFloat(26.0)
+        let imageHeight = CGFloat(26.0)
         
         //        var labelFrame = self.menuItems[index].titleLabel!.frame
         //        labelFrame.origin.x = imageWidth / 1.5
@@ -1202,13 +1215,22 @@ open class CAPSPageMenu: UIViewController, UIScrollViewDelegate, UIGestureRecogn
             color = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         }
         
-        let title = UILabel()
-        title.lineBreakMode = .byWordWrapping
-        title.font = UIFont(name: "RobotoWeb-Regular", size: 14.0)!
-        title.numberOfLines = 0
-        title.text = text
-        title.textColor = color
-        title.sizeToFit()
+        let titleFocus = UILabel()
+        titleFocus.numberOfLines = 2
+        titleFocus.lineBreakMode = .byWordWrapping
+        titleFocus.font = UIFont(name: "RobotoWeb-Regular", size: 12.0)!
+        titleFocus.text = text
+        titleFocus.textColor = color
+        titleFocus.textAlignment = .center
+        
+        let titleNormal = UILabel()
+        titleNormal.numberOfLines = 2
+        titleNormal.lineBreakMode = .byWordWrapping
+        titleNormal.font = UIFont(name: "RobotoWeb-Regular", size: 12.0)!
+        titleNormal.text = text
+        titleNormal.textColor = color
+        titleNormal.textAlignment = .center
+        
         
         let imageFocus: UIImage = UIImage(named: focus)!
         let bgImageFocus = UIImageView(image: imageFocus)
@@ -1222,27 +1244,50 @@ open class CAPSPageMenu: UIViewController, UIScrollViewDelegate, UIGestureRecogn
         imageFrame.size.height = imageHeight
         
         bgImageFocus.frame = imageFrame
-        bgImageFocus.tag = 8888
-        bgImageFocus.alpha = 0.0
+//        bgImageFocus.tag = 8888
+//        bgImageFocus.alpha = 0.0
+        bgImageFocus.contentMode = .scaleAspectFill
         
         bgImageNormal.frame = imageFrame
-        bgImageNormal.tag = 9999
-        bgImageNormal.alpha = 1.0
+//        bgImageNormal.tag = 9999
+//        bgImageNormal.alpha = 1.0
+        bgImageNormal.contentMode = .scaleAspectFill
         
-        let viewForcus = UIView()
-        viewForcus.tag = 8888
-        viewForcus.alpha = 0.0
-        viewForcus.addSubview(bgImageNormal)
-        viewForcus.addSubview(title)
+//        let viewForcus = UIView()
+//        viewForcus.tag = 8888
+//        viewForcus.alpha = 1.0
+//        viewForcus.addSubview(bgImageNormal)
+//        viewForcus.addSubview(title)
         
+        let viewFocus = UIView()
+        viewFocus.tag = 8888
+        viewFocus.alpha = 1.0
+        viewFocus.addSubview(bgImageFocus)
+        viewFocus.addSubview(titleFocus)
         
-        bgImageNormal.anchor(self.menuItems[index].topAnchor, left: nil, bottom: nil, right: nil, topConstant: 8, leftConstant: 12, bottomConstant: 0, rightConstant: 0, widthConstant: imageWidth, heightConstant: imageHeight)
-        bgImageNormal.centerXAnchor.constraint(equalTo: self.menuItems[index].centerXAnchor).isActive = true
+        let viewNormal = UIView()
+        viewNormal.tag = 9999
+        viewNormal.alpha = 1.0
+        viewNormal.addSubview(bgImageNormal)
+        viewNormal.addSubview(titleNormal)
         
-        title.anchor(bgImageNormal.bottomAnchor, left: self.menuItems[index].leftAnchor, bottom: self.menuItems[index].bottomAnchor, right: self.menuItems[index].rightAnchor, topConstant: 16, leftConstant: 8, bottomConstant: 8, rightConstant: 8, widthConstant: self.menuItems[index].frame.width, heightConstant: 20)
+        bgImageFocus.anchor(viewFocus.topAnchor, left: nil, bottom: nil, right: nil, topConstant: 8, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: imageWidth, heightConstant: imageHeight)
+        bgImageFocus.centerXAnchor.constraint(equalTo: viewFocus.centerXAnchor).isActive = true
         
-        self.menuItems[index].addSubview(viewForcus)
+        titleFocus.anchor(bgImageFocus.bottomAnchor, left: viewFocus.leftAnchor, bottom: nil, right: viewFocus.rightAnchor, topConstant: 4, leftConstant: 8, bottomConstant: 8, rightConstant: 8, widthConstant: 0, heightConstant: 0)
+        
+        bgImageNormal.anchor(viewNormal.topAnchor, left: nil, bottom: nil, right: nil, topConstant: 8, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: imageWidth, heightConstant: imageHeight)
+        bgImageNormal.centerXAnchor.constraint(equalTo: viewNormal.centerXAnchor).isActive = true
+ 
+        titleNormal.anchor(bgImageNormal.bottomAnchor, left: viewNormal.leftAnchor, bottom: nil, right: viewNormal.rightAnchor, topConstant: 4, leftConstant: 8, bottomConstant: 8, rightConstant: 8, widthConstant: 0, heightConstant: 0)
+        
+        self.menuItems[index].addSubview(viewFocus)
+        self.menuItems[index].addSubview(viewNormal)
+        
+        viewFocus.anchor(self.menuItems[index].topAnchor, left: self.menuItems[index].leftAnchor, bottom: self.menuItems[index].bottomAnchor, right: self.menuItems[index].rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 0)
+        viewNormal.anchor(self.menuItems[index].topAnchor, left: self.menuItems[index].leftAnchor, bottom: self.menuItems[index].bottomAnchor, right: self.menuItems[index].rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 0)
     }
+ 
     
     func resetAllImage() {
         for index in (0...3) {
