@@ -313,7 +313,7 @@ open class CAPSPageMenu: UIViewController, UIScrollViewDelegate, UIGestureRecogn
         addImageOverMyMenuItem(index: 0)
         addImageOverMyMenuItem(index: 1)
         addImageOverMyMenuItem(index: 2)
-        addImageOverMyMenuItem(index: 3)
+        
         removeImageOverMyMenuItem(index: 0, isFocus: true)
         
         if iconIndicator {
@@ -904,8 +904,6 @@ open class CAPSPageMenu: UIViewController, UIScrollViewDelegate, UIGestureRecogn
                     self.selectionIndicatorView.backgroundColor = #colorLiteral(red: 0.4705882353, green: 0.7568627451, blue: 0.4235294118, alpha: 1)
                 case 2:
                     self.selectionIndicatorView.backgroundColor = #colorLiteral(red: 0.862745098, green: 0.7176470588, blue: 0.2509803922, alpha: 1)
-                case 3:
-                    self.selectionIndicatorView.backgroundColor = #colorLiteral(red: 0.03529411765, green: 0.6901960784, blue: 0.8588235294, alpha: 1)
                 default:
                     self.selectionIndicatorView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
                 }
@@ -1186,13 +1184,9 @@ open class CAPSPageMenu: UIViewController, UIScrollViewDelegate, UIGestureRecogn
     
     
     /****************************** Meaw ******************************/
-      func addImageOverMyMenuItem(index: Int) {
+    func addImageOverMyMenuItem(index: Int) {
         let imageWidth = CGFloat(26.0)
         let imageHeight = CGFloat(26.0)
-        
-        //        var labelFrame = self.menuItems[index].titleLabel!.frame
-        //        labelFrame.origin.x = imageWidth / 1.5
-        //        self.menuItems[index].titleLabel!.frame = labelFrame
         
         var imageFrame = self.menuItems[index].titleLabel!.frame
         
@@ -1214,10 +1208,6 @@ open class CAPSPageMenu: UIViewController, UIScrollViewDelegate, UIGestureRecogn
             normal = "icon_job_update"
             focus = "icon_job_update"
             color = #colorLiteral(red: 0.862745098, green: 0.7176470588, blue: 0.2509803922, alpha: 1)
-        case 3:
-            normal = "icon_job_by_ai"
-            focus = "icon_job_by_ai"
-            color = #colorLiteral(red: 0.03529411765, green: 0.6901960784, blue: 0.8588235294, alpha: 1)
         default:
             normal = ""
             focus = ""
@@ -1278,7 +1268,7 @@ open class CAPSPageMenu: UIViewController, UIScrollViewDelegate, UIGestureRecogn
         
         bgImageNormal.anchor(viewNormal.topAnchor, left: nil, bottom: nil, right: nil, topConstant: 8, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: imageWidth, heightConstant: imageHeight)
         bgImageNormal.centerXAnchor.constraint(equalTo: viewNormal.centerXAnchor).isActive = true
- 
+        
         titleNormal.anchor(bgImageNormal.bottomAnchor, left: viewNormal.leftAnchor, bottom: nil, right: viewNormal.rightAnchor, topConstant: 4, leftConstant: 8, bottomConstant: 8, rightConstant: 8, widthConstant: 0, heightConstant: 0)
         
         self.menuItems[index].addSubview(viewFocus)
@@ -1287,10 +1277,11 @@ open class CAPSPageMenu: UIViewController, UIScrollViewDelegate, UIGestureRecogn
         viewFocus.anchor(self.menuItems[index].topAnchor, left: self.menuItems[index].leftAnchor, bottom: self.menuItems[index].bottomAnchor, right: self.menuItems[index].rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 0)
         viewNormal.anchor(self.menuItems[index].topAnchor, left: self.menuItems[index].leftAnchor, bottom: self.menuItems[index].bottomAnchor, right: self.menuItems[index].rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 0)
     }
- 
     
+    
+    /****************************** Meaw ******************************/
     func resetAllImage() {
-        for index in (0...3) {
+        for index in (0...2) {
             if let bgImage = self.menuItems[index].viewWithTag(8888) {
                 bgImage.alpha = 1.0
             }
